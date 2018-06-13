@@ -1,0 +1,35 @@
+{"elements":
+    [	
+	{
+        id: "vaultbeyondforest1",
+            label: "The Prometheus Institute",
+            aspects:{vault:1,location:1,vaultlandbeyondforest:1},
+			
+			slots:[
+			{id:"expeditionmember",label:"Leader",description:"I must have at least one Follower to start the expedition. I can add more later.",required:{follower:1},actionId:"explore"},{id:"expeditionmember2",label:"Assistant",description:"Optionally, I can add an extra Follower now, if I think they'll be useful.",required:{follower:1},actionId:"explore"},
+			{id:"expeditionfunds",label:"Funds",description:"I must have at least one Funds to begin the expedition.",required:{funds:1},actionId:"explore"},
+			{id:"expeditionfunds",label:"Further Funds",description:"Optionally, I can add more Funds now, if I'm worried about running out.",required:{funds:1},actionId:"explore"},
+			],
+            description: "Backed by the engineer Maximillian Cherault, the Prometheus Institute for three decades recruited the best and brightest to its secretive campus in the Alps. The strange stories coming from the Institute eventually led the Suppression Bureau to investigate.  They found nothing, not even people; Cherault was well-connected. Yet near nothing of the team returned. Perhaps you might try find out why...",
+			unique:true
+        },
+
+}
+
+"recipes": [
+	
+			 	{
+	id: "explore_vaultlandbeyondforest1_setup",
+	label: "Beginning an Expedition: the Prometheus Institute",
+	actionId: "explore",
+	requirements:{funds:1,follower:1,vaultlandbeyondforest1:1},
+	effects: {peril_mountains:1,guardian_bot:1},
+
+	startdescription: "The Institute is secreted high in the mountains. Besides that, whatever ended the Bureau's agents may also end us.... [Expeditions need at least one Funds per obstacle. Followers will defeat obstacles. If you run out of Funds or Followers, the Expedition ends.]",
+	description: ".",
+	warmup:30,
+	craftable: true,
+	linked: [
+	{id: "explorevault_expeditionbegun",chance:100}],
+	},
+]

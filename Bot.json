@@ -1,0 +1,167 @@
+ {"recipes": [
+{
+	id: "explorevaultguardian_bot_encounter",
+	actionId:"explore",
+	label: "A Host of Automata",
+	startdescription: "A legion of hissing, thundering, roaring automata, stand before us, their gleaming bronze weaponry levelled. Fighting them would be foolish, very foolish... but perhaps we might succeed. Lantern or Knock might allow us more prudent passage.",
+	requirements: {guardian_bot:1},
+	slots:[{id:"Assistance", description: "Funds are essential for expeditions. Followers will allow me to pass obstacles.",required: {follower:1,funds:1}}],
+	alternativerecipes: [
+	{id: "explorevaultguardian_bot_highknock",chance:100},
+	{id: "explorevaultguardian_bot_highlantern",chance:100},
+	{id: "explorevaultguardian_bot_highedge",chance:100},
+	{id: "explorevaultguardian_bot_midknock",chance:100},
+	{id: "explorevaultguardian_bot_midlantern",chance:100},
+	{id: "explorevaultguardian_bot_midedge",chance:100},
+	{id: "explorevaultguardian_bot_lowknock",chance:100},
+	{id: "explorevaultguardian_bot_lowlantern",chance:100}	
+	{id: "explorevaultguardian_bot_lowedge",chance:100}	
+	],
+	warmup:30,
+	craftable: false,
+	linked: [{id:"explorevaultguardian_bot_failure",chance:100}]
+	},
+	
+
+	{id:"explorevaultguardian_bot_highedge",
+	actionId: "explore",
+	requirements:{edge:10},
+	label:"Our strength is matchless. But...",
+	startdescription:"But we are also made for other things. These things were designed only to destroy, by a History well versed in how. They may yet prevail...",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_edge",chance:70},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+
+
+		{id:"explorevaultguardian_bot_midedge",
+	actionId: "explore",
+	requirements:{edge:5},
+	label:"Our strength is considerable.",
+	startdescription:"But these things are more than considerable. Eyes narrow, powers gather as barrels spin and glowing orbs fix. This fight will be thunderous.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_edge",chance:40},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+
+
+		  	{id:"explorevaultguardian_bot_lowedge",
+	actionId: "explore",
+	requirements:{edge:1},
+	label:"Our strength may not be enough.",
+	startdescription:"And this is not a situation where you want insufficient strength. Hope here is a waning flame. But just maybe...",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_edge",chance:10},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_bot_highknock",
+	actionId: "explore",
+	requirements:{knock:10},
+	label:"We call upon the Anaconda, against whom the sharpest eyes fail.",
+	startdescription:"The glowing orbs that are their eyes scan. But the Anaconda evades even the wards of the Golden City. We shall be concealed.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_knock",chance:100},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_bot_midknock",
+	actionId: "explore",
+	requirements:{knock:5},
+	label:"We call upon the Anaconda, who steals through defences.",
+	startdescription:"These are merely more watchmen, more sentries. The Anaconda has bypassed these easily. Likely, so shall we.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_knock",chance:70},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_bot_lowknock",
+	actionId: "explore",
+	requirements:{knock:1},
+	label:"We call upon the Anaconda, who is unseen.",
+	startdescription:"Their eyes are not their only sensory arrays. We will have to make no noise, maybe give off no warmth. But perhaps we might be seen through safely.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_knock",chance:30},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+	
+		  	{id:"explorevaultguardian_bot_highlantern",
+	actionId: "explore",
+	requirements:{lantern:10},
+	label:"We call upon the Star, who inspires all invention.",
+	startdescription:"Directly or indirectly, this sprang from the generosity of the Star. Understanding will allow us subversion, will allow us passage.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_lantern",chance:100},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_bot_midlantern",
+	actionId: "explore",
+	requirements:{lantern:5},
+	label:"We call upon the Star, whose inspiration shines.",
+	startdescription:"The works of the Engine's History were mighty, but crude. We should understand them and bypass them.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_lantern",chance:70},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_bot_lowlantern",
+	actionId: "explore",
+	requirements:{knock:1},
+	label:"We call upon the Star, who lights the Journey.",
+	startdescription:"We will have to watch from a distance. Still, there is much information we can glean. It may be enough.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_bot_success_lantern",chance:30},
+	{id:"explorevaultguardian_bot_failure",chance:100}]	  
+		  },
+	
+			{
+	id: "explorevaultguardian_bot_success_lantern",
+	actionId:"explore",
+	label: "Knowledge is Gunpowder",
+	startdescription: "A terrible, fatal structural flaw, that the ammunition stores are so easily breached with a thrown stone. Wait for the smoke to clear and walk by.",
+	description: ".",
+	effects: {guardian_bot:-1},
+	craftable: false,
+		linked: [{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+
+			{
+	id: "explorevaultguardian_bot_success_edge",
+	actionId:"explore",
+	label: "The Detritus of War",
+	startdescription: "The last wisp of cordite from the guns of our foes drifts away to reveal a battlefield strewn with metal. We shall pass.",
+	description: ".",
+	effects: {guardian_bot:-1},
+	craftable: false,
+		linked: [{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+				{
+	id: "explorevaultguardian_bot_success_knock",
+	actionId:"explore",
+	label: "Silence.",
+	startdescription: "We pass unseen, unheard. The automata detect nothing and their lights wink out, returning to their long slumber",
+	description: ".",
+	effects: {guardian_botse:-1},
+	craftable: false,
+		linked: [{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+	
+				{
+	id: "explorevaultguardian_bot_failure",
+	actionId:"explore",
+	label: "As Bismarck Said...",
+	startdescription: "Blood and iron! Blood and iron! Far more blood, the blood of your people, than the iron of the automata. The thunder of the gatling guns begin to sound. Run, run!",
+	description: ".",
+	craftable: false,
+		linked: [{id:"explorevault_casualty",chance:70},
+		{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+
+
+	]
+}
